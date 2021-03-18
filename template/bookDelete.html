@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block create %}
+
+<div class="jumbotron">
+  <p>Are you sure you want to delete this book : {{item}} </p>
+  <form action="{% url 'bookdel' item.id %}" method="POST">
+      {% csrf_token %}
+      <a href="{% url 'bookls' %}">Cancel</a>
+      <input type="submit" name="Confirm">
+  </form>
+</div>
+
+{% endblock %}

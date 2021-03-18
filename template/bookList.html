@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block create %}
+
+<div class="jumbotron">
+   {% for book in books %}
+        <ul>
+            <li>
+                <a href="{% url 'bookdl' book.id %}">{{ book.Title }} </a>
+            </li>
+        </ul>
+   {% endfor %}
+</div>
+{% endblock %}

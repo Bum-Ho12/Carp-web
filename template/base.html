@@ -1,0 +1,61 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+       crossorigin="anonymous"></script>
+    <title>Carp Kenya API</title>
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover {
+          background-color: #111;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            
+            <li><a href=" {% url 'book' %} ">Resources Form</a></li>
+            <li><a href="{% url 'activity' %}">Activities Form</a></li>
+            <li><a href="{% url 'album' %}">Album Form</a></li>
+            <li><a href=" {% url 'notification' %} ">Notification Form</a></li>
+            <li><a href="{% url 'bookls' %}">List of Books</a></li>
+            <li><a href="{% url 'activityls' %}">List of activities</a></li>
+            <li><a href="{% url 'albumls' %}">List of Images</a></li>
+            <li><a href=" {% url 'notificationls' %} ">List of notifications</a></li>
+            <li><a href=" {% url 'bookS' %} ">Resources API</a></li>
+            <li><a href=" {% url 'activityS' %} "> Activities API</a></li>
+            <li><a href=" {% url 'albumS' %} ">Albums API</a></li>
+            <li><a href=" {% url 'notificationS' %} ">notifications API</a></li>
+          </ul>
+    </nav>
+      
+        {% block create %}
+        {% endblock %}
+      
+</body>
+</html>

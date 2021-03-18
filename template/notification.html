@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block create %}
+<h1>Notification Form</h1>
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Post</button>
+    </form>
+</div>
+{% endblock %}

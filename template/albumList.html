@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block create %}
+
+<div class="jumbotron">
+   {% for album in albums %}
+        <ul>
+            <li>
+                <a href="{% url 'albumdl' album.id %}">{{ album.description }} </a>
+            </li>
+        </ul>
+   {% endfor %}
+</div>
+{% endblock %}

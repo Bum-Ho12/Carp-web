@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block create %}
+
+<div class="jumbotron">
+    <h3>Title: {{object.name}}</h3>
+    <h3>Description: {{object.description}}</h3>
+    <h3>Link: <a href="{{object.Link}}">{{object.Link}}</a></h3>
+    <button><a href="{% url 'notificationup' object.id %}">Update</a></button>
+    <button><a href="{% url 'notificationdel' object.id %}">Delete</a></button>
+</div>
+
+{% endblock %}

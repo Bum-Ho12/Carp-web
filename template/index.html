@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block create %}
+<h1>Book</h1>
+<div class="container">
+   <form method="POST" enctype="multipart/form-data">
+       {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Post</button>
+   </form>
+</div>
+{% endblock %}

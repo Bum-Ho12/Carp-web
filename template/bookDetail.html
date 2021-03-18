@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block create %}
+
+<div class="jumbotron">
+    <h3>Title: {{object.Title}}</h3>
+    <h3>Description: {{object.description}}</h3>
+    <h3>Category: {{object.category}}</h3>
+    {% if object.imageFile %}
+        <img src="{{object.imageFile.url}}" style="width: 250; height: 250;">
+    {% endif %}
+    {% if object.File %}
+        <a href="{{object.File.url}}">Open File</a>
+    {% endif %}
+    <button><a href="{% url 'bookup' object.id %}">Update</a></button>
+    <button><a href="{% url 'bookdel' object.id %}">Delete</a></button>
+</div>
+
+{% endblock %}

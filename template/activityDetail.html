@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block create %}
+
+<div class="jumbotron">
+    <h3>Title: {{object.event}}</h3>
+    <h3>Description: {{object.description}}</h3>
+    {% if object.image %}
+        <img src="{{object.image.url}}" style="width: 250;height: 250;">
+    {% endif %}
+    <button><a href="{% url 'activityup' object.id %}">Update</a></button>
+    <button><a href="{% url 'activitydel' object.id %}">Delete</a></button>
+</div>
+
+{% endblock %}

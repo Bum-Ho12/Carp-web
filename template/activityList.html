@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block create %}
+
+<div class="jumbotron">
+   {% for activity in activities %}
+        <ul>
+            <li>
+                <a href="{% url 'activitydl' activity.id %}">{{ activity.event }} </a>
+            </li>
+        </ul>
+   {% endfor %}
+</div>
+{% endblock %}
