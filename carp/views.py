@@ -191,12 +191,18 @@ def notificationDelete(request,pk):
     context={'item': Notification}
     return render(request,template,context)
 
-@api_view(['GET'])
+"""@api_view(['GET'])
 def BookView(request,pk):
     id=request.query_params['pk']
     if id!=None:
         ob = book.objects.get(pk=pk)
         serialiser=Book(ob)
+    return Response(serialiser.data)"""
+
+@api_view(['GET'])
+def BookView(request):
+    ob = book.objects.all()
+    serialiser = Book(ob, many=True)
     return Response(serialiser.data)
 
 
